@@ -174,7 +174,7 @@
             </section>
         <!--Fim da Seção equipe-->
         <!--Seção Final-->
-            <section class="final-site">
+            <section class="final-site" id="contato">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -235,10 +235,14 @@
             contato@sitedan.com.br</a>.</p>            
         </footer>
     </div><!--box-->
-        
+
+    <!--Scripts JS-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/scroll.js"></script>    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
   </body>
 </html>
