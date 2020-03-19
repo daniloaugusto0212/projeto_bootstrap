@@ -9,47 +9,134 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!--paleta de cores https://www.colourlovers.com/palette/4706309/Kimono-->
-
-   
+    <!--paleta de cores https://www.colourlovers.com/palette/4706309/Kimono-->   
   </head>
   <body>
     <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Site Dan</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Cadastrar Equipe</a></li>
-                <li><a href="#about">Editar Sobre</a></li>
-                <li><a href="#contact">Gerenciar Equipe</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">                
-                <li><a href=""><span class="glyphicon glyphicon-off"></span> Sair</a></li>                
-            </ul>
-            </div><!--/.nav-collapse -->
+      <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Site Dan</a>
         </div>
-        </nav>
+        <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Cadastrar Equipe</a></li>
+            <li><a href="#about">Editar Sobre</a></li>
+            <li><a href="#contact">Gerenciar Equipe</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">                
+            <li><a href=""><span class="glyphicon glyphicon-off"></span> Sair</a></li>                
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-        <header id="header">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-9">
-                <h2><span class="glyphicon glyphicon-cog"></span> Painel de controle</h2>
-              </div><!--col-md-6-->
-              <div class="col-md-3">
-                <p><span class="glyphicon glyphicon-time"></span> Seu último login foi em: 12/06/2019</p>
-              </div><!--col-md-6-->
-            </div><!--row-->
-          </div><!--container-->
-        </header>
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <h2><span class="glyphicon glyphicon-cog"></span> Painel de controle</h2>
+          </div><!--col-md-6-->
+          <div class="col-md-3">
+            <p><span class="glyphicon glyphicon-time"></span> Seu último login foi em: 12/06/2019</p>
+          </div><!--col-md-6-->
+        </div><!--row-->
+      </div><!--container-->
+    </header>
+
+    <section class="bread">
+      <div class="container">
+        <ol class="breadcrumb">          
+          <li class="active">Home</li>
+        </ol>
+        </div><!--container-->
+    </section>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="#" class="list-group-item active cor-padrao"><span class="glyphicon glyphicon-home"></span> Home</a>
+              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span> Sobre</a>
+              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span> Equipe</a>              
+            </div>
+          </div><!--col-md-3-->
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-heading cor-padrao">
+                <h3 class="panel-title " > Sobre</h3>
+              </div>
+              <div class="panel-body">
+              <form action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Código HTML:</label>
+                  <textarea name="" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"></textarea>
+                </div>                
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              </div>
+            </div><!--panel-default-->
+
+            <div class="panel panel-default">
+              <div class="panel-heading cor-padrao">
+                <h3 class="panel-title " > Cadastrar Equipe</h3>
+              </div>
+              <div class="panel-body">
+              <form action="/action_page.php">
+              <div class="form-group">
+                  <label for="email">Nome do membro:</label>
+                  <input type="text" name="nome_menbro" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="email">Descrição do membro:</label>
+                  <textarea name="" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"></textarea>
+                </div>                
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              </div>
+            </div><!--panel-default-->
+
+            <div class="panel panel-default">
+              <div class="panel-heading cor-padrao">
+                <h3 class="panel-title " > Membros da equipe:</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>ID:</th>
+                      <th>Nome do menbro</th>                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Doe</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Moe</td>
+                      
+                    <tr>
+                      <td>3</td>
+                      <td>Dooley</td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div><!--panel-default-->
+          </div><!--col-md-9-->
+        </div><!--row-->
+      </div><!--container-->
+    <section class="principal">
+
+    </section>
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

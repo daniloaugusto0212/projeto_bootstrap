@@ -2,13 +2,13 @@ body{
   background-color: #C8C6B1;
 }
 
-
 /*Alterar a cor padrão do bootstrap https://work.smarchal.com/twbscolor/*/
 
 .navbar-default,
 .cor-padrao {
-    background-color: #4d7f62;
-    border-color: #1a5131;
+    background-color: #4d7f62 !important;
+    border-color: #1a5131 !important;
+    color: #ecf0f1 !important;
   }
   .navbar-default .navbar-brand {
     color: #ecf0f1;
@@ -68,6 +68,7 @@ body{
   header#header{
     background: #30372F;
     color: white;
+    margin-bottom: 20px;
   }
 
   #header h2{
