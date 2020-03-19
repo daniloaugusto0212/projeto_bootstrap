@@ -86,7 +86,7 @@
 
         <!--Seção diferenciais-->
             <section class="diferenciais text-center">
-                <h2>Conheça nossa empresa!</h2>
+                <h2>Conheça nossa empresa</h2>
                 <div class="container  diferenciais-container">
                     <div class="row">
                         <div class="col-md-4">
@@ -108,6 +108,77 @@
                 </div><!--container-->
             </section>
         <!--Fim da Seção diferenciais-->
+
+        <!--Seção equipe-->
+            <section class="equipe">
+                <h2>Equipe</h2>
+                <div class="container equipe-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="equipe-single">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="user-picture">
+                                            <div class="user-picture-child"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3>Danilo</h3>
+                                        <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                                    </div>
+                                </div>
+                            </div><!--equipe-single-->
+                        </div><!--col-md-6-->
+                        <div class="col-md-6">
+                            <div class="equipe-single">
+                            <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="user-picture">
+                                        <div class="user-picture-child"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3>Fulano</h3>
+                                        <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                                    </div>
+                                </div>
+                            </div><!--equipe-single-->
+                        </div><!--col-md-6-->
+                        <div class="col-md-6">
+                            <div class="equipe-single">
+                            <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="user-picture">
+                                        <div class="user-picture-child"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3>Fulano</h3>
+                                        <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                                    </div>
+                                </div>
+                            </div><!--equipe-single-->
+                        </div><!--col-md-6-->
+                        <div class="col-md-6">
+                            <div class="equipe-single">
+                            <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="user-picture">
+                                        <div class="user-picture-child"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3>Fulano</h3>
+                                        <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                                    </div>
+                                </div>
+                            </div><!--equipe-single-->
+                        </div><!--col-md-6-->
+                    </div><!--row-->
+                </div><!--equipe-container-->
+            </section>
+        <!--Fim da Seção equipe-->
+
     </div><!--box-->
         
 
