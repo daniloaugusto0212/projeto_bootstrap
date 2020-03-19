@@ -179,6 +179,69 @@
             </section>
         <!--Fim da Seção equipe-->
 
+        <!--Seção Final-->
+            <section class="final-site">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Fale conosco</h2>
+                        <form action="/action_page.php">
+                        <div class="form-group">
+                            <label for="email">Nome:</label>
+                            <input type="name" name="nome" class="form-control" id="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Mensagem:</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div><!--col-md-6-->
+                    <div class="col-md-6">
+                        <h2>Nosso planos</h2>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Plano Semanal</th>
+                                <th>Plano Diário</th>
+                                <th>Plano Anual</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>R$199,00</td>
+                                <td>R$99,00</td>
+                                <td>R$599,00</td>
+                            </tr>
+                            <tr>
+                                <td>R$199,00</td>
+                                <td>R$99,00</td>
+                                <td>R$599,00</td>
+                            </tr>
+                            <tr>
+                                <td>R$199,00</td>
+                                <td>R$99,00</td>
+                                <td>R$599,00</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div><!--col-md-6-->
+                </div><!--row-->
+            </div><!--container-->
+            </section>
+        <!--Fim da Seção Final-->
+
+        <footer>
+            <p class="text-center" >Todos os direitos reservados! | Email de Contato: <a href="contato@sitedan.com.br">
+            contato@sitedan.com.br</a>.</p>            
+        </footer>
+
     </div><!--box-->
         
 
