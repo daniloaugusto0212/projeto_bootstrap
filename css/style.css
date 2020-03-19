@@ -85,6 +85,10 @@ section.cadastro-lead input[type=submit]{
     border: 1px solid #ccc;
 }
 
+section.depoimento{
+    padding: 40px 0;
+}
+
 section.depoimento h2{
     color: #4b4b4b;
 }
@@ -92,6 +96,27 @@ section.depoimento h2{
 section.depoimento blockquote{
     color: #4b4b4b;
     font-size: 16px;
+}
+
+section.diferenciais{
+    padding: 20px 0;
+    background: rgb(225, 225, 225);
+}
+
+section.deferenciais > h2{
+    color: #4b4b4b;
+}
+
+.diferenciais-container{
+    margin-top: 30px;
+}
+
+.diferenciais-container h3{
+    color: #FEC810;
+}
+
+.diferenciais-container h2{
+    font-size: 22px;  
 }
 
 @media screen and (max-width: 1024px){

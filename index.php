@@ -72,15 +72,42 @@
         <!--Seção de depoimentos-->
         <section class="depoimento text-center">
             <div class="container">
-                <div class="col-md-12">
-                    <h2>Depoimento</h2>
-                    <blockquote>
-                        <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
-                    </blockquote>
-                </div><!--col-md-12-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Depoimento</h2>
+                        <blockquote>
+                            <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                        </blockquote>
+                    </div><!--col-md-12-->
+                </div><!--row-->
             </div><!--container-->
         </section>
         <!-- Fim da Seção de depoimentos-->
+
+        <!--Seção diferenciais-->
+            <section class="diferenciais text-center">
+                <h2>Conheça nossa empresa!</h2>
+                <div class="container  diferenciais-container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3><span class="glyphicon glyphicon-glass"></span></h3>
+                            <h2>Diferencial #1 </h2>
+                            <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                        </div><!--col-md-4-->
+                        <div class="col-md-4">
+                            <h3><span class="glyphicon glyphicon-star"></span></h3>
+                            <h2>Diferencial #2 </h2>
+                            <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                        </div><!--col-md-4-->
+                        <div class="col-md-4">
+                            <h3><span class="glyphicon glyphicon-heart"></span></h3>
+                            <h2>Diferencial #3 </h2>
+                            <p>"O pedaço padrão de Lorem Ipsum usado desde os anos 1500 é reproduzido abaixo para os interessados. As seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cícero também são reproduzidas em sua forma original exata, acompanhadas de versões em inglês da tradução de 1914 por H. Rackham."</p>
+                        </div><!--col-md-4-->
+                    </div><!--row-->
+                </div><!--container-->
+            </section>
+        <!--Fim da Seção diferenciais-->
     </div><!--box-->
         
 
