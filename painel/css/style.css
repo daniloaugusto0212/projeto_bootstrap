@@ -1,3 +1,8 @@
+body{
+  background-color: #C8C6B1;
+}
+
+
 /*Alterar a cor padrão do bootstrap https://work.smarchal.com/twbscolor/*/
 
 .navbar-default,
@@ -54,7 +59,39 @@
   .navbar-default .navbar-link:hover {
     color: #fbfbfb;
   }
+
+  /*Custon style para nosso painel*/
+ .navbar{
+   margin-bottom: 0 !important;
+   border-radius: 0;
+ }
+  header#header{
+    background: #30372F;
+    color: white;
+  }
+
+  #header h2{
+    margin-top: 20px;
+  }
+
+  #header p{
+    margin-top: 20px;
+    position: relative;
+    top: 9px;
+  }
   
+  @media screen and (max-width: 1000px) {
+    #header{
+      text-align: center;
+    }
+
+    #header p{
+      margin-top: 20px;
+      position: relative;
+      top: 0;
+    }
+  }
+
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #ecf0f1;
