@@ -1,3 +1,9 @@
+<?php
+    $pdo = new PDO('mysql:host=localhost;dbname=bootstrap_projeto','root', '');
+    $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
+    $sobre->execute();
+    $sobre = $sobre->fetch()['sobre'];
+?>
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -68,17 +74,34 @@
             </div>
           </div><!--col-md-3-->
           <div class="col-md-9">
+            <?php
+              if(isset($_POST['editar_sobre'])){
+                $sobre = $_POST['sobre'];                
+                if($sobre == ''){
+                  echo '<div class="alert alert-warning" role="alert">O campo não pode estar vazio!</div>';
+                }else{
+                  $pdo->exec("DELETE FROM `tb_sobre`");
+                  $slq = $pdo->prepare("INSERT INTO `tb_sobre` VALUES(null,?)");
+                  $slq->execute(array($sobre));    
+                  echo '<div class="alert alert-success" role="alert"> O código HTML <b>Sobre</b> foi editado com sucesso!</div>';
+                  $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
+                  $sobre->execute();
+                  $sobre = $sobre->fetch()['sobre'];
+              }
+            }
+            ?>
             <div id="sobre_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
                 <h3 class="panel-title " > Sobre</h3>
               </div>
               <div class="panel-body">
-              <form action="/action_page.php">
+              <form method="post">
                 <div class="form-group">
-                  <label for="email">Código HTML:</label>
-                  <textarea name="" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"></textarea>
-                </div>                
-                <button type="submit" class="btn btn-default">Submit</button>
+                  <label for="email">Código HTML:</label>                  
+                  <textarea name="sobre" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"><?php echo $sobre; ?></textarea>
+                </div> 
+                <input type="hidden" name="editar_sobre" value="">               
+                <button type="submit" name="acao" class="btn btn-default">Submit</button>
               </form>
               </div>
             </div><!--panel-default-->

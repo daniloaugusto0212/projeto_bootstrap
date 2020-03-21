@@ -156,6 +156,14 @@ section.equipe h2{
   background: #ccc;
 }
 
+.user-picture-child > span{
+  color: rgb(110, 110, 110);
+  font-size: 30px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 section.final-site{
   padding: 30px 0;
   border-top: 2px solid #ccc;
@@ -189,6 +197,12 @@ footer p{
       padding-top: 40%;      
       position: relative;    
   }
+
+  .user-picture-child > span{  
+    font-size: 50px;
+   
+  }
+
   section.cadastro-lead form{
       position: relative;
       top: 0;
@@ -197,6 +211,10 @@ footer p{
 }
 
 @media screen and (max-width: 500px){
+  .user-picture-child > span{  
+    font-size: 20px;
+   
+  }
   .chamada-baner h2{
       color: #FEC810;
       font-size: 35px;
