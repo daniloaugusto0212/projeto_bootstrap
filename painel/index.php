@@ -12,7 +12,7 @@
     <!--paleta de cores https://www.colourlovers.com/palette/4706309/Kimono-->   
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-fixed-top  navbar-default">
       <div class="container">
         <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,6 +36,7 @@
       </div>
     </nav>
 
+    <div style="position: relative;top:50px" class="box">
     <header id="header">
       <div class="container">
         <div class="row">
@@ -67,7 +68,7 @@
             </div>
           </div><!--col-md-3-->
           <div class="col-md-9">
-            <div class="panel panel-default">
+            <div id="sobre_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
                 <h3 class="panel-title " > Sobre</h3>
               </div>
@@ -82,7 +83,7 @@
               </div>
             </div><!--panel-default-->
 
-            <div class="panel panel-default">
+            <div id="cadastrar_equipe_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
                 <h3 class="panel-title " > Cadastrar Equipe</h3>
               </div>
@@ -101,7 +102,7 @@
               </div>
             </div><!--panel-default-->
 
-            <div class="panel panel-default">
+            <div id="lista_equipe_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
                 <h3 class="panel-title " > Membros da equipe:</h3>
               </div>
@@ -135,6 +136,7 @@
     <section class="principal">
 
     </section>
+    </div><!--box-->
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -143,15 +145,30 @@
     <script type="text/javascript">
       $(function(){
         cliqueMenu();
+        scrollItem();
+        /*seleção*/
           function cliqueMenu(){
             $('#menu-principal a, .list-group a').click(function(){
-              $('.list-group a').removeClass('active').removeClass('cor-padrao');
-              $('#menu-principal a').parent().removeClass('active');
-              $('#menu-principal a[ref_sys='+$(this).attr('ref_sys')+']').parent().addClass('active');
-              $('.list-group a[ref_sys='+$(this).attr('ref_sys')+']').addClass('active').addClass('cor-padrao');
-              return false;
-            })
+            $('.list-group a').removeClass('active').removeClass('cor-padrao');
+            $('#menu-principal a').parent().removeClass('active');
+            $('#menu-principal a[ref_sys='+$(this).attr('ref_sys')+']').parent().addClass('active');
+            $('.list-group a[ref_sys='+$(this).attr('ref_sys')+']').addClass('active').addClass('cor-padrao');
+            return false;
+          })
         }
+        /*scroll suave*/
+        function scrollItem(){
+          $('#menu-principal a, .list-group a').click(function(){
+              var ref = '#'+$(this).attr('ref_sys')+'_section';
+              var offset = $(ref).offset().top;
+              $('html,body').animate({'scrollTop':offset-50});
+              if($(window)[0].innerWidth <= 768){
+              $('.icon-bar').click();
+              }
+          });
+        }
+
+        
       })
     </script>
   </body>
