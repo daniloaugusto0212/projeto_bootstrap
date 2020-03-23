@@ -34,6 +34,8 @@
             <li class="active"><a href="#"  ref_sys="sobre">Editar Sobre</a></li>
             <li><a href="#" ref_sys="cadastrar_equipe">Cadastrar Equipe</a></li>
             <li><a href="#" ref_sys="lista_equipe">Lista Equipe</a></li>
+            <li><a href="#" ref_sys="cadastrar_plano">Cadastrar Plano</a></li>
+            <li><a href="#" ref_sys="lista_planos">Lista Planos</a></li>            
         </ul>
         <ul class="nav navbar-nav navbar-right">                
             <li><a href=""><span class="glyphicon glyphicon-off"></span> Sair</a></li>                
@@ -69,8 +71,13 @@
             <div class="list-group">              
               <a href="#" class="list-group-item active cor-padrao" ref_sys="sobre"><span class="glyphicon glyphicon-pencil"></span> Sobre</a>
               <a href="#" class="list-group-item" ref_sys="cadastrar_equipe"><span class="glyphicon glyphicon-pencil"></span> Cadastrar Equipe</a>   
-              <a href="#" class="list-group-item " ref_sys="lista_equipe"><span class="glyphicon glyphicon-list-alt"></span> Lista Equipe <span class="badge"> 2</span> </a>           
+              <a href="#" class="list-group-item " ref_sys="lista_equipe"><span class="glyphicon glyphicon-list-alt"></span> Lista Equipe <span class="badge"> 2</span> </a>    
+
+              <a href="#" class="list-group-item" ref_sys="cadastrar_plano"><span class="glyphicon glyphicon-pencil"></span> Cadastrar Plano</a>   
+              <a href="#" class="list-group-item " ref_sys="lista_planos"><span class="glyphicon glyphicon-list-alt"></span> Lista Planos <span class="badge"></span> </a>          
             </div>
+                    
+            
           </div><!--col-md-3-->
           <div class="col-md-9">
             <?php
@@ -88,7 +95,14 @@
                 $descricao = $_POST['descricao'];
                 $slq = $pdo->prepare("INSERT INTO `tb_equipe` VALUES(null,?,?)");
                 $slq->execute(array($nome,$descricao));    
-                echo '<div class="alert alert-success" role="alert"> O membro da equipe foi cadastarda com sucesso!</div>';
+                echo '<div class="alert alert-success" role="alert"> O membro da equipe foi cadastrad0 com sucesso!</div>';
+               
+              }else if (isset($_POST['cadastrar_plano'])) {
+                $nome = $_POST['nome_plano'];
+                $valor = $_POST['valor_plano'];
+                $slq = $pdo->prepare("INSERT INTO `tb_planos` VALUES(null,?,?)");
+                $slq->execute(array($nome,$valor));    
+                echo '<div class="alert alert-success" role="alert"> O plano foi cadastrado com sucesso!</div>';
                
               }
             
@@ -129,6 +143,26 @@
               </div>
             </div><!--panel-default-->
 
+            <div id="cadastrar_plano_section" class="panel panel-default">
+              <div class="panel-heading cor-padrao">
+                <h3 class="panel-title " > Cadastrar Plano</h3>
+              </div>
+              <div class="panel-body">
+              <form method="post">
+              <div class="form-group">
+                  <label for="email">Nome do Plano:</label>
+                  <input type="text" name="nome_plano" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="email">Valor do plano R$:</label>
+                  <input type="text" name="valor_plano" class="form-control">
+                </div>   
+                <input type="hidden" name="cadastrar_plano">             
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              </div>
+            </div><!--panel-default-->
+
             <div id="lista_equipe_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
                 <h3 class="panel-title " > Membros da equipe:</h3>
@@ -153,6 +187,40 @@
                       <td><?php echo $value['id']; ?></td>
                       <td><?php echo $value['nome']; ?></td>
                       <td><button id_membro="<?php echo $value['id']; ?>" type="button" class="deletar-membro btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Excluir</button></td>
+                    </tr>
+                      <?php } ?>
+                 
+                  </tbody>
+                </table>
+              </div>
+            </div><!--panel-default-->
+
+            <div id="lista_planos_section" class="panel panel-default">
+              <div class="panel-heading cor-padrao">
+                <h3 class="panel-title " > Nossos Planos: </h3>
+              </div>
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead>                                      
+                    <tr>   
+                      <th>ID:</th>                   
+                      <th>Nome do plano: </th> 
+                      <th>Valor: </th> 
+                      <th>#</th>                                               
+                    </tr>
+                  </thead>                  
+                  <tbody>
+                  <?php
+                  $selecionarPlano = $pdo->prepare("SELECT * FROM `tb_planos`");
+                  $selecionarPlano->execute();
+                  $planos = $selecionarPlano->fetchAll();
+                    foreach($planos as $key=>$value) { 
+                      ?>                    
+                    <tr>                      
+                      <td><?php echo $value['id']; ?></td>
+                      <td><?php echo $value['nome']; ?></td>
+                      <td><?php echo $value['valor']; ?></td>
+                      <td><button id_plano="<?php echo $value['id']; ?>" type="button" class="deletar-plano btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Excluir</button></td>
                     </tr>
                       <?php } ?>
                  
@@ -210,7 +278,21 @@
           });
           })        
       });
-      
+
+      $('button.deletar-plano').click(function(){
+          var id_plano = $(this).attr('id_plano');
+          var el = $(this).parent().parent();
+          $.ajax({
+            method:'post',
+            data:{'id_plano':id_plano},
+            url:'deletar.php'
+          }).done(function(){
+            el.fadeOut(function(){
+            el.remove();
+          });
+          })        
+      });
+
       })
     </script>
   </body>

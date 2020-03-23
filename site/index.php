@@ -150,29 +150,31 @@
                     <div class="col-md-6">
                         <h2>Nosso planos</h2>
                         <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Plano Semanal</th>
-                                <th>Plano Diário</th>
-                                <th>Plano Anual</th>
-                            </tr>
-                            </thead>
+                        <?php 
+                        $selectPlanos = $pdo->prepare("SELECT * FROM `tb_planos`");
+                        $selectPlanos->execute();
+                        $planos = $selectPlanos->fetchAll();
+                        ?>
+
+                        <thead>
+                        <tr>
+                        <?php
+                        for ($i=0; $i < count($planos); $i++) {            
+                    ?>
+                        <th><?php echo $planos[$i]['nome'] ?></th>                       
+                        <?php } ?>              
+                                
+                        </tr>
+                        </thead>
                             <tbody>
                             <tr>
-                                <td>R$199,00</td>
-                                <td>R$99,00</td>
-                                <td>R$599,00</td>
-                            </tr>
-                            <tr>
-                                <td>R$199,00</td>
-                                <td>R$99,00</td>
-                                <td>R$599,00</td>
-                            </tr>
-                            <tr>
-                                <td>R$199,00</td>
-                                <td>R$99,00</td>
-                                <td>R$599,00</td>
-                            </tr>
+                            <?php
+                            for ($i=0; $i < count($planos); $i++) {            
+                            ?>
+                                <td><?php echo $planos[$i]['valor'] ?></td>
+                                
+                            <?php } ?>
+                            </tr>                  
                             
                             </tbody>
                         </table>
