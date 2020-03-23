@@ -63,11 +63,10 @@
         </ol>
         </div><!--container-->
     </section>
-    <div class="container">
+    <div class="container ">
         <div class="row">
           <div class="col-md-3">
-            <div class="list-group">
-              
+            <div class="list-group">              
               <a href="#" class="list-group-item active cor-padrao" ref_sys="sobre"><span class="glyphicon glyphicon-pencil"></span> Sobre</a>
               <a href="#" class="list-group-item" ref_sys="cadastrar_equipe"><span class="glyphicon glyphicon-pencil"></span> Cadastrar Equipe</a>   
               <a href="#" class="list-group-item " ref_sys="lista_equipe"><span class="glyphicon glyphicon-list-alt"></span> Lista Equipe <span class="badge"> 2</span> </a>           
@@ -76,19 +75,23 @@
           <div class="col-md-9">
             <?php
               if(isset($_POST['editar_sobre'])){
-                $sobre = $_POST['sobre'];                
-                if($sobre == ''){
-                  echo '<div class="alert alert-warning" role="alert">O campo não pode estar vazio!</div>';
-                }else{
-                  $pdo->exec("DELETE FROM `tb_sobre`");
-                  $slq = $pdo->prepare("INSERT INTO `tb_sobre` VALUES(null,?)");
-                  $slq->execute(array($sobre));    
-                  echo '<div class="alert alert-success" role="alert"> O código HTML <b>Sobre</b> foi editado com sucesso!</div>';
-                  $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
-                  $sobre->execute();
-                  $sobre = $sobre->fetch()['sobre'];
+                $sobre = $_POST['sobre'];        
+                $pdo->exec("DELETE FROM `tb_sobre`");
+                $slq = $pdo->prepare("INSERT INTO `tb_sobre` VALUES(null,?)");
+                $slq->execute(array($sobre));    
+                echo '<div class="alert alert-success" role="alert"> O código HTML <b>Sobre</b> foi editado com sucesso!</div>';
+                $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
+                $sobre->execute();
+                $sobre = $sobre->fetch()['sobre'];
+              }else if (isset($_POST['cadastrar_equipe'])) {
+                $nome = $_POST['nome_membro'];
+                $descricao = $_POST['descricao'];
+                $slq = $pdo->prepare("INSERT INTO `tb_equipe` VALUES(null,?,?)");
+                $slq->execute(array($nome,$descricao));    
+                echo '<div class="alert alert-success" role="alert"> O membro da equipe foi cadastarda com sucesso!</div>';
+               
               }
-            }
+            
             ?>
             <div id="sobre_section" class="panel panel-default">
               <div class="panel-heading cor-padrao">
@@ -111,15 +114,16 @@
                 <h3 class="panel-title " > Cadastrar Equipe</h3>
               </div>
               <div class="panel-body">
-              <form action="/action_page.php">
+              <form method="post">
               <div class="form-group">
                   <label for="email">Nome do membro:</label>
-                  <input type="text" name="nome_menbro" class="form-control">
+                  <input type="text" name="nome_membro" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="email">Descrição do membro:</label>
-                  <textarea name="" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"></textarea>
-                </div>                
+                  <textarea name="descricao" id="" cols="30" rows="8" class="form-control" style="resize:vertical;"></textarea>
+                </div>   
+                <input type="hidden" name="cadastrar_equipe">             
                 <button type="submit" class="btn btn-default">Submit</button>
               </form>
               </div>
@@ -140,11 +144,14 @@
                   </thead>
                   <tbody>
                   <?php
-                    for ($i=0; $i < 5; $i++) { 
+                  $selecionarMembros = $pdo->prepare("SELECT `id`,`nome` FROM `tb_equipe`");
+                  $selecionarMembros->execute();
+                  $membros = $selecionarMembros->fetchAll();
+                    foreach($membros as $key=>$value) { 
                       ?>                    
                     <tr>
-                      <td>1</td>
-                      <td>Danilo</td>
+                      <td><?php echo $value['id']; ?></td>
+                      <td><?php echo $value['nome']; ?></td>
                       <td><button type="button" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Excluir</button></td>
                     </tr>
                       <?php } ?>

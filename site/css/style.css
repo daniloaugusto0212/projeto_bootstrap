@@ -133,6 +133,7 @@ section.equipe h2{
 .equipe-single{
   margin-bottom: 15px;
   width: 100%;
+  min-height: 200px;
   padding: 20px 10px;
   border: 1px solid #ccc;
   box-shadow: 8px 7px 5px -3px rgba(20,20,20,0.6);
